@@ -3,8 +3,8 @@ import { Link, useNavigate} from "react-router-dom";
 
 
 
-import logo from "../assets/logo.png";
-import Menu from "../assets/menu.png";
+import logo from "../assets/Logo.png";
+import Menu from "../assets/Menu.png";
 
 export default function Navbar() {
   const [scrollPosition, setScrollPosition] = useState(0);
