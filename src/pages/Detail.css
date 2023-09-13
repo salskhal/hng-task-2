@@ -1,0 +1,48 @@
+.skeleton-container {
+    min-height: 100vh;
+    background-color: #000;
+    padding-top: 40px;
+    padding-left: 20px;
+    position: relative;
+    z-index: -1;
+  }
+  
+  .skeleton-header {
+    height: 60vh;
+    background-color: #ddd; /* Fallback color for non-supported browsers */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjUgMjUiIHdpZHRoPSIyNSIgaGVpZ2h0PSIyNSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZyBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjIiPgo8cGF0aCBkPSJNMTIuMjA1IDIuODM0NGwtNC4wNjY2LTguNzg3MzUtNC4wNjY2IDguNzg3MzUtNC4wNjY2NiA2LjY3MTc1IDYuNjcxNzUgNC4wNjY2NnoiLz4KPC9nPgo8L3N2Zz4K'); /* Base64 encoded SVG image as a placeholder */
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .skeleton-poster {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd; /* Fallback color for non-supported browsers */
+    border-radius: 8px;
+    animation: pulse 1.5s infinite alternate; /* Pulse animation */
+  }
+  
+  .skeleton-details {
+    background-color: #ddd; /* Fallback color for non-supported browsers */
+    height: 1em;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    animation: pulse 1.5s infinite alternate; /* Pulse animation */
+  }
+  
+  @keyframes pulse {
+    from {
+      opacity: 0.6;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
