@@ -118,8 +118,8 @@ export default function Detail() {
 
           "
         >
-          <h1 className="text-5xl font-bold">{movie.title}</h1>
-          <p className="t text-xl font-semibold text-gray-300">
+          <h1 className="text-5xl font-bold" data-testid="movie-title">{movie.title}</h1>
+          <p className="t text-xl font-semibold text-gray-300" data-testid="movie-overview">
             {movie.overview}
           </p>
           <div className="flex flex-col mt-10">
@@ -130,13 +130,13 @@ export default function Detail() {
           </div>
           <div className="flex flex-col gap-2 mt-5">
             <span className="text-gray-header font-medium">Release Date</span>
-            <span className="text-gray-paragraph font-semibold text-xl">
+            <span className="text-gray-paragraph font-semibold text-xl" data-testid="movie-release-date">
               {releaseDate}
             </span>
           </div>
           <div className="flex flex-col gap-2 mt-5">
             <span className="text-gray-header font-medium">Runtime</span>
-            <span className="text-gray-paragraph font-semibold text-xl">
+            <span className="text-gray-paragraph font-semibold text-xl" data-testid="movie-runtime">
               {movie.runtime} minutes
             </span>
           </div>
@@ -147,7 +147,7 @@ export default function Detail() {
             </span>
           </div>
         </div>
-      </div>
+      </div>  
     </div>
   );
 }

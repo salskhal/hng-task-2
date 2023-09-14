@@ -22,13 +22,13 @@ export default function Footer() {
       </div>
 
       <div 
-        className="flex gap-10 itm-center justify-center text-xl text-[#111827] font-bold"
+        className="flex flex-col text-center md:flex-row gap-10 item-center justify-center text-xl text-[#111827] font-bold"
       >
         <p>Conditions of Use</p>
         <p>Provicay & Policy</p>
         <p>Press Room</p>
       </div>
-      <div>
+      <div className="text-center">
         <p>© {getCurrentYear(year)} MovieBox by Adriana Eka Prayudha </p>
       </div>
     </footer>
