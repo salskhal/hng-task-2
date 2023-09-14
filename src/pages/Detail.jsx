@@ -9,9 +9,7 @@ export default function Detail() {
 
   useEffect(() => {
     const fetchMovieDetail = async () => {
-
       try {
-        
         const response = await fetch(
           `https://api.themoviedb.org/3/movie/${movieId}?api_key=4e44d9029b1270a757cddc766a1bcb63`
         );
@@ -30,6 +28,11 @@ export default function Detail() {
 
     fetchMovieDetail();
   }, [movieId]);
+
+
+  const date = new Date(movie?.release_date);
+  // display in UTC
+  const releaseDate = date.toUTCString().split(" ").slice(0, 4).join(" ");
 
   if (isLoading) {
     return (
@@ -88,17 +91,16 @@ export default function Detail() {
   if (!movie) return null;
 
   return (
-    <div className="min-h-screen bg-blue-950 pt-40 px-20 relative z-[-1]">
+    <div className="min-h-screen bg-blue-950 py-40  px-5 md:px-20 relative z-[-1]">
       <div
-        className="h-[70vh] bg-cover bg-center bg-no-repeat rounded-md overflow-hidden relative mb-20"
+        className="hidden md:flex h-[70vh] bg-cover bg-center bg-no-repeat rounded-md overflow-hidden relative mb-20"
         style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`, 
-          // backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.belongs_to_collection.backdrop_path})`,
+          backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
         }}
       >
-        <div className="pt-20  px-20 flex flex-col gap-3 justify-center h-full bg-black bg-opacity-50"></div>
+        <div className="pt-20  px-20 flex flex-col gap-3 justify-center h-full w-full bg-black bg-opacity-50"></div>
       </div>
-      <div className=" grid grid-cols-2 gap-10  text-white relative px-10">
+      <div className=" md:grid grid-cols-2 gap-10  text-white relative md:px-10">
         <div className=" bg-cover bg-center bg-no-repeat rounded-md overflow-hidden relative mb-20">
           <img
             src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
@@ -117,8 +119,10 @@ export default function Detail() {
           "
         >
           <h1 className="text-5xl font-bold">{movie.title}</h1>
-          <p className="t text-xl font-semibold text-gray-300">{movie.overview}</p>
-          <div className="flex flex-col">
+          <p className="t text-xl font-semibold text-gray-300">
+            {movie.overview}
+          </p>
+          <div className="flex flex-col mt-10">
             <span className="text-gray-header font-medium">Type</span>
             <span className="text-gray-paragraph font-semibold text-xl">
               Movie
@@ -127,7 +131,7 @@ export default function Detail() {
           <div className="flex flex-col gap-2 mt-5">
             <span className="text-gray-header font-medium">Release Date</span>
             <span className="text-gray-paragraph font-semibold text-xl">
-              {movie.release_date}
+              {releaseDate}
             </span>
           </div>
           <div className="flex flex-col gap-2 mt-5">
