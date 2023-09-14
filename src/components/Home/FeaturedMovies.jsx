@@ -21,9 +21,9 @@ export const FeaturedMovies = () => {
     fetchMovies();
   }, []);
   return (
-    <div className="m min-h-screen p-16 bg-cover bg-center bg-no-repeat">
+    <div className="min-h-screen px-6 md:px-16 py-16 bg-cover bg-center bg-no-repeat">
       <div className="flex justify-between items-center">
-        <h1 className="text-4xl font-bold text-black">Featured Movies</h1>
+        <h1 className="text-2xl md:text-4xl font-bold text-black">Featured Movies</h1>
         <span className="text-rose flex items-center gap-3 cursor-pointer">
           See more
           <i className="fa-solid fa-chevron-right"></i>

@@ -2,11 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function MovieCards({ movie }) {
+
+  const { id, poster_path, release_date, title, vote_average } = movie;
+
+  
   return (
     <div data-testid="movie-card">
-      <Link to={`/details/${movie.id}`} className="bg-white  overflow-hidden  ">
+      <Link to={`/details/${id}`} className="bg-white  overflow-hidden  ">
         <img
-          src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+          src={`https://image.tmdb.org/t/p/original/${poster_path}`}
           alt=""
           className="w-full object-cover"
           data-testid="movie-poster"
@@ -16,14 +20,14 @@ export default function MovieCards({ movie }) {
             className="text-gray-500 font-semibold"
             data-testid="movie-release-date"
           >
-            USA, {movie.release_date.split("-")[0]}
+            USA, {release_date.split("-")[0]}
           </span>
           <h1 className="text-xl font-bold" data-testid="movie-title">
-            {movie.title}
+            {title}
           </h1>
 
           <div className="flex justify-between items-center mt-5">
-            <span className="text-rose font-medium">{movie.vote_average}</span>
+            <span className="text-rose font-medium">{vote_average}</span>
           </div>
         </div>
       </Link>

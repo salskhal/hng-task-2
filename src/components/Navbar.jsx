@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate} from "react-router-dom";
+import MobileNav from "./MobileNav";
 
 
 
@@ -9,7 +10,12 @@ import Menu from "../assets/Menu.png";
 export default function Navbar() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [search, setSearch] = useState("");
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false); 
   const navigate = useNavigate();
+
+  
+
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,9 +36,16 @@ export default function Navbar() {
     }
     setSearch("");
   };
+
+  const handleMobileNav = () => {
+    setIsMobileNavOpen(!isMobileNavOpen);
+  };
+
+
+
   return (
     <nav
-      className={`px-20 py-5 flex justify-between items-center fixed top-0 left-0 right-0 transition-colors duration-500 ${
+      className={` px-5 lg:px-20 py-5 flex justify-between items-center fixed top-0 left-0 right-0 transition-colors duration-500 ${
         scrollPosition > 0 ? "bg-red-800" : "bg-transparent"
       }`}
     >
@@ -41,7 +54,7 @@ export default function Navbar() {
       </Link>
       <form
         onSubmit={handleSubmit}
-        className="flex items-center gap-5  px-5 py-2 rounded-md border-2 cursor-pointer"
+        className="items-center gap-5  px-5 py-2 rounded-md border-2 cursor-pointer hidden md:flex"
       >
         <input
           type="text"
@@ -69,8 +82,9 @@ export default function Navbar() {
 
       <div className="flex items-center gap-3">
         <p className="text-white font-medium">Sign in</p>
-        <img src={Menu} alt="Menu" />
+        <img src={Menu} alt="Menu" onClick={handleMobileNav} className="cursor-pointer" />
       </div>
+      {isMobileNavOpen && <MobileNav isMobileNavOpen={isMobileNavOpen} setIsMobileNavOpen={setIsMobileNavOpen} />}
     </nav>
   );
 }

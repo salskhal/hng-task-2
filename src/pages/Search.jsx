@@ -31,7 +31,7 @@ export default function Search() {
   }, [searchId]);
 
   return (
-    <div className="min-h-screen bg-blue-950 pt-40 px-20">
+    <div className="min-h-screen bg-blue-950 py-40 px-6 md:px-16">
       <h1 className="text-white text-4xl font-bold">
         Search Results for: <span className="underline">{searchId}</span>
       </h1>
@@ -50,7 +50,7 @@ export default function Search() {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-4 gap-10 text-white mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-20">
           {searchResults.map((movie) => (
             <MovieCards movie={movie} key={movie.id} />
           ))}

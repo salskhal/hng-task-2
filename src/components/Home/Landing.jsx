@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Poster from "../../assets/Poster.png";
+import Imdb from "../../assets/Imdb.svg";
+import Tomato from "../../assets/Tomato.svg";
 import { Link } from "react-router-dom";
 
 export default function Landing() {
@@ -30,11 +31,29 @@ export default function Landing() {
       }}
     >
       {movie && (
-        <div className="pt-20  px-20 flex flex-col gap-3 justify-center h-full bg-black bg-opacity-50 text-white">
-            <h1 className="text-5xl font-bold">{movie.title}</h1>
-            <p className="text-2xl font-medium w-1/2 ">{movie.overview}</p>
+        <div className="pt-20 px-5 md:px-20 flex flex-col gap-3 justify-center h-full bg-black bg-opacity-50 text-white">
+          <h1 className="text-5xl font-bold">{movie.title}</h1>
+          <div className="flex gap-5 my-5 md:my-10">
+            <div className="flex gap-2 items-center">
+              <img src={Imdb} alt="" className="w-10" />
+              <span className="text-white font-medium">
+                {movie.vote_average}
+              </span>
+            </div>
+            <div className="flex gap-2 items-center">
+              <img src={Tomato} alt="" className="w-6" />
+              <span className="text-white font-medium">
+                {movie.vote_average * 10}%
+              </span>
+            </div>
+          </div>
+
+          <p className="text-2xl font-medium md:w-1/2 ">{movie.overview}</p>
           <div className="flex gap-5 mt-5">
-            <Link to="/details/615656" className="flex items-center gap-3 bg-rose text-white px-5 py-2 rounded-md font-medium">
+            <Link
+              to="/details/615656"
+              className="flex items-center gap-3 bg-rose text-white px-5 py-2 rounded-md font-medium"
+            >
               More Info
               <svg
                 xmlns="http://www.w3.org/2000/svg"

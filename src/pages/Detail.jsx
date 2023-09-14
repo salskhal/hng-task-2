@@ -17,6 +17,7 @@ export default function Detail() {
         );
         const data = await response.json();
         setMovie(data);
+        console.log(data);
       } catch (error) {
         console.error("Failed to fetch movie detail: ", error);
       } finally {
@@ -89,9 +90,10 @@ export default function Detail() {
   return (
     <div className="min-h-screen bg-blue-950 pt-40 px-20 relative z-[-1]">
       <div
-        className="h-[60vh] bg-cover bg-center bg-no-repeat rounded-md overflow-hidden relative mb-20"
+        className="h-[70vh] bg-cover bg-center bg-no-repeat rounded-md overflow-hidden relative mb-20"
         style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
+          backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`, 
+          // backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.belongs_to_collection.backdrop_path})`,
         }}
       >
         <div className="pt-20  px-20 flex flex-col gap-3 justify-center h-full bg-black bg-opacity-50"></div>
