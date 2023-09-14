@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/Logo.png";
 
 export default function MobileNav({ isMobileNavOpen, setIsMobileNavOpen }) {
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+
   const onClick = (event) => {
     if (event.target.classList.contains("overlay")) {
       setIsMobileNavOpen(false);
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (search) {
+      navigate(`/search/${search}`);
+    }
+    setIsMobileNavOpen(false);
+    setSearch("");
   };
 
   return (
@@ -18,13 +31,15 @@ export default function MobileNav({ isMobileNavOpen, setIsMobileNavOpen }) {
           <img src={Logo} alt="" />
         </div>
         <form
-          action=""
+          onSubmit={handleSubmit}
           className="mt-10 flex items-center rounded-md gap-5  px-5 py-2 border-2"
         >
           <input
             type="text"
             className="bg-transparent text-white outline-none 
             w-full"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
