@@ -1,8 +1,21 @@
-# React + Vite
+# HNG Stage two task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objective
 
-Currently, two official plugins are available:
+Create a movie discovery web application that allows users to search for movies, view details about them, and save their favorite movies. You’ll be consuming data from the TMDB API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Search for movies
+- View movie details
+- Save favorite movies (Not Functional)
+
+## LIVE Endpoint https://movieboxxx.vercel.app/
+
+## Instructions to run Localy
+
+- Clone the repo
+- Go to the directory
+- Run "npm install" to install all the dependencies
+- You are live
+
