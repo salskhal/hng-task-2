@@ -11,9 +11,9 @@ export const FeaturedMovies = () => {
       )
         .then((res) => res.json())
         .then((data) => {
-          const movies = data.results.slice(0, 10);
+          const movies = data.results.slice(1, 11);
           setMovies(movies);
-          console.log(movies);
+        
         })
         .catch((err) => console.log(err));
     };

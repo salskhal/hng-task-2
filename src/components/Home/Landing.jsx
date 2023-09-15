@@ -9,12 +9,14 @@ export default function Landing() {
   useEffect(() => {
     const fetchMovie = async () => {
       fetch(
-        "https://api.themoviedb.org/3/movie/615656?api_key=4e44d9029b1270a757cddc766a1bcb63"
+        "https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63"
       )
         .then((res) => res.json())
         .then((data) => {
-          setMovie(data);
-          console.log(data);
+          // get the first data from the array
+          const first = data.results[0];
+
+          setMovie(first);
         })
         .catch((err) => console.log(err));
     };
