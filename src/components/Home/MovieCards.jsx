@@ -14,9 +14,13 @@ export default function MovieCards({ movie }) {
     setIsLoved(!isLoved); // Toggle the love icon color
   };
 
+  const date = new Date(release_date)
+
+  const releaseDate = date.toUTCString().split(" ").slice(0, 4).join(" ");
+
   return (
-    <div data-testid="movie-card">
-      <Link to={`/movies/${id}`} className="bg-white  overflow-hidden  ">
+    <div >
+      <Link to={`/movies/${id}`} className="bg-white  overflow-hidden " data-testid="movie-card">
         <div className="r relative -z-20 ">
           <img
             src={`https://image.tmdb.org/t/p/original/${poster_path}`}
@@ -46,7 +50,7 @@ export default function MovieCards({ movie }) {
             className="text-gray-500 font-semibold"
             data-testid="movie-release-date"
           >
-            USA, {release_date.split("-")[0]}
+            {releaseDate}
           </span>
           <h1 className="text-xl font-bold" data-testid="movie-title">
             {title}
