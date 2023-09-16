@@ -41,7 +41,7 @@ export default function Landing() {
               <span className="text-white font-medium">
                 {movie.vote_average}
               </span>
-            </div>
+            </div>  
             <div className="flex gap-2 items-center">
               <img src={Tomato} alt="" className="w-6" />
               <span className="text-white font-medium">
@@ -53,7 +53,7 @@ export default function Landing() {
           <p className="text-2xl font-medium md:w-1/2 ">{movie.overview}</p>
           <div className="flex gap-5 mt-5">
             <Link
-              to="/details/615656"
+              to="/movies/615656"
               className="flex items-center gap-3 bg-rose text-white px-5 py-2 rounded-md font-medium"
             >
               More Info
