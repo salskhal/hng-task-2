@@ -16,7 +16,7 @@ export default function MovieCards({ movie }) {
 
   return (
     <div data-testid="movie-card">
-      <Link to={`/movie/${id}`} className="bg-white  overflow-hidden  ">
+      <Link to={`/movies/${id}`} className="bg-white  overflow-hidden  ">
         <div className="r relative -z-20 ">
           <img
             src={`https://image.tmdb.org/t/p/original/${poster_path}`}
