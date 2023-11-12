@@ -56,7 +56,7 @@ export default function Landing() {
               to="/movies/615656"
               className="flex items-center gap-3 bg-rose text-white px-5 py-2 rounded-md font-medium"
             >
-              More Info
+              Info on the movie
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
